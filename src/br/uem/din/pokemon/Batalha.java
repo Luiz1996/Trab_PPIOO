@@ -7,21 +7,23 @@ import java.util.Scanner;
 public class Batalha {
     Pokemon Pokemon = new Pokemon();
     
-    int meusPokemons [] =  {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
     Pokemon[] meuPokemon = new Pokemon [6];
+    int controle[] = new int [6];
+    
+    
        
     public void carregarTabelas(){
        Scanner input = new Scanner(System.in);
         System.out.println("Escolha seus Pokemons:");
         for (int i = 0; i < 6; i++){
             System.out.print("Escolha seu " + (i+1) + "º Pokemon:" );
-            int escolha = input.nextInt();
-
-            
-        
-   
+            int escolha = input.nextInt();        
+            meuPokemon[i] = Pokemon.escolhaPokemon(escolha-1);
+            System.out.println("Pokemon escolhido: " + meuPokemon[i].nome);
+            controle[i] = escolha; //Para controlar se o Pokemon já foi escolhido
         }
     }
+
     
     public void inicializarJogadores(){
         Scanner input = new Scanner(System.in);
@@ -44,7 +46,7 @@ public class Batalha {
             switch (opcao){
                 case 1: 
                     inicializa = false;
-                    Pokemon.todosPokemons();
+                    Pokemon.mostraPokemons();
                     
                     //
 
