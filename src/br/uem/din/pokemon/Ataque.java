@@ -3,22 +3,26 @@ package br.uem.din.pokemon;
 public class Ataque {
     
     private String nome;
-    private double ppMax, ppAtual;
-    private int id, power, accuracy;
+    private double ppMax, ppAtual, accuracy, critico, dano;
+    private int id, power;
+    private boolean acerto;
     
     public void efeito(){
         //desenvolver
     }
     
-    public void calculoCritico(){
+    public double calculoCritico(){
         //desenvolver
+        return critico;
     }
     
-    public void calculoAcerto(){
+    public boolean calculoAcerto(){
         //esenvolver
+       return acerto;
     }
     
-    public void calculoDano(){
+    public double calculoDano(){
         //desenvolver
+        return dano;
     }
 }

@@ -1,7 +1,13 @@
 package br.uem.din.pokemon;
 
-public class Status {
+public enum Status {
     
-    private String ok, fainted, burn, frozen, paralysis, poison, sleep;
-
+    OK,
+    FAINTED,
+    BURN,
+    FROZEN,
+    PARALYSIS,
+    POISON,
+    SLEEP;
+    
 }

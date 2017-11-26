@@ -13,4 +13,7 @@ public class Jogador {
     public void usarAtaque(){
         //desenvolver
     }
+    
+
+    
 }

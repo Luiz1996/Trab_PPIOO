@@ -1,7 +1,21 @@
 package br.uem.din.pokemon;
 
-public class Tipo {
+public enum Tipo {
     
-    private String none, bug, dragon, eletric, fighting, fire, flying, ice, ghost, grass, ground, normal, poison, psychic, rock, water;
-    
+    NONE,
+    BUG,
+    DRAGON, 
+    ELETRIC,
+    FIGHTING,
+    FIRE,
+    FLYING,
+    ICE,
+    GHOST,
+    GRASS,
+    GROUND,
+    NORMAL,
+    POISON,
+    PSYCHIC,
+    ROCK,
+    WATER;
 }
