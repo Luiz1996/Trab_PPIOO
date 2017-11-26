@@ -46,7 +46,7 @@ public class Batalha {
                     inicializa = false;
                     Pokemon.todosPokemons();
                     
-                    
+                    //
 
                     break;
 
