@@ -1,10 +1,8 @@
 package br.uem.din.pokemon;
 
-public class Jogador {
+public abstract class Jogador {
     
-    public void escolherComando(){
-        //desenvolver
-    }
+    public abstract void escolherComando();
     
     public void trocarPokemon(){
         //desenvolver
