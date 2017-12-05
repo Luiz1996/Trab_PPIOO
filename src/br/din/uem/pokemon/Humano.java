@@ -1,4 +1,4 @@
-package br.uem.din.pokemon;
+package br.din.uem.pokemon;
 
 public class Humano {
     

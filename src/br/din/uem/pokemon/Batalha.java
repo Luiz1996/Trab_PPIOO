@@ -1,11 +1,13 @@
-package br.uem.din.pokemon;
+package br.din.uem.pokemon;
 
-import static br.uem.din.pokemon.Jogo.limparTela;
+import static br.din.uem.pokemon.Jogo.limparTela;
+import dr.din.uem.fronteira.Inicio;
 import java.util.Scanner;
 
 public class Batalha {
 
-    Pokemon Pokemon = new Pokemon();
+    
+   Pokemon Pokemon = new Pokemon();
     Pokemon[] meusPokemons = new Pokemon[6];
     int controle[] = new int[6];
 
@@ -44,9 +46,9 @@ public class Batalha {
             switch (opcao) {
                 case 1:
                     inicializa = false;
-                    Pokemon.todosPokemons();
                     Jogo.limparTela();
-
+                    Inicio inicio = new Inicio();
+                    inicio.inicializar ();
                     //será realizado 2x porque são duas pessoas.
                     carregarTabelas();
                     carregarTabelas();
