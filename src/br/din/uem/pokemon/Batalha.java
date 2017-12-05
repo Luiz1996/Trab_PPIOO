@@ -1,7 +1,7 @@
 package br.din.uem.pokemon;
 
 import static br.din.uem.pokemon.Jogo.limparTela;
-import dr.din.uem.fronteira.Inicio;
+import br.din.uem.fronteira.Inicio;
 import java.util.Scanner;
 
 public class Batalha {

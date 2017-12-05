@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dr.din.uem.fronteira;
+package br.din.uem.fronteira;
 
 import br.din.uem.construtores.Controlador;
 import br.din.uem.pokemon.Pokemon;
