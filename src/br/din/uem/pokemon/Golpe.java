@@ -3,17 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.uem.din.pokemon;
+package br.din.uem.pokemon;
 
 /**
  *
  * @author Mateus
  */
-public class JogadorHumano extends Jogador{
+public enum Golpe {
     
-    @Override
-    public void escolherComando(){
-    
-}
+    COMUM, ESPECIAL;
     
 }
