@@ -6,7 +6,10 @@
 package br.din.uem.fronteira;
 
 import br.din.uem.construtores.Controlador;
+import br.din.uem.construtores.Leitor;
 import br.din.uem.pokemon.Pokemon;
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -15,7 +18,7 @@ import java.util.Scanner;
  */
 public class Inicio {
 
-    Controlador controlador = new Controlador();
+    Leitor controlador = new Leitor();
     private int opcao;
     Scanner scan = new Scanner(System.in);
 
@@ -26,16 +29,16 @@ public class Inicio {
         opcao = scan.nextInt();
     }
 
-    public void inicializar() {
+    public void inicializar() throws IOException {
         do {
             menu();
-            controlador.recuperarDados();
+            controlador.getLinhasArquivo(new File("tabelas.txt"));
             Pokemon P;
             switch (opcao) {
                 case 1:
                     System.out.println("Informe o nome do Pokemon ");
                     String nome = scan.next();
-                    P = controlador.buscarPokemonNome(nome);
+                    /*P = controlador.buscarPokemonNome(nome);
                     if (P != null) {
                         System.out.println("Resultado da busca:");
                         System.out.println(P.toString());
@@ -46,15 +49,16 @@ public class Inicio {
                 case 2:
                     System.out.println("Informe o id do Pokemon");
                     int id = scan.nextInt();
-                    P = controlador.buscarPokemonMapa(id);
+                    //P = controlador.buscarPokemonMapa(id);
                     if (P != null) {
                         System.out.println("Resultado da busca:");
                         System.out.println(P.toString());
                     } else {
                         System.out.println("Pokemon nao encontrado   ");
                     }
-                    break;
-            }
+                    break;*/ 
+            } 
         } while (opcao != 0);
-    }
+    } 
 }
+            
