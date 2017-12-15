@@ -6,94 +6,67 @@
 package br.din.uem.construtores;
 
 import br.din.uem.pokemon.Pokemon;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- * private int level, modifierAccuracy, modifierEvasion, modifierAtk,
- * modifierDef, modifierSpe, modifierSpd, num; private double hpAtual, hpMax,
- * atk, def, spe, spd, atributoValor; private boolean confusion, flinch;
- *
- * @author TransDesk
- */
 public class Leitor {
 
-    private List<Pokemon> pokemons = new ArrayList<>();
-    private Map<Integer, Pokemon> mapa = new HashMap<>();
+    private static Pokemon[] todosPokemons = new Pokemon[12];
+    private static List<String[]> arquivoGolpe = new ArrayList<>();
 
-    public void lerArquivoParaLista() {
-        try {
-            Scanner scan = new Scanner(new FileReader("tabelas.xlsx"));
-            System.out.println("Arquivo lido com sucesso!");
-            scan.nextLine();//para pular a linha do cabecalho
-            while (scan.hasNext() || scan.hasNextDouble()) {
-                int id = scan.nextInt();
-                String especie = scan.next();
-                String type1 = scan.next();
-                String type2 = scan.next();
-                int baseHP = scan.nextInt();
-                int baseATK = scan.nextInt();
-                int baseDEF = scan.nextInt();
-                int baseSPE = scan.nextInt();
-                int baseSPD = scan.nextInt();
-                Pokemon P = new Pokemon();
-                P.setId(id);
-                P.setEspecie(especie);
-                P.setType1(type1);
-                P.setType2(type2);
-                P.setBaseHP(baseHP);
-                P.setBaseATK(baseATK);
-                P.setBaseDEF(baseDEF);
-                P.setBaseSPE(baseSPE);
-                P.setBaseSPD(baseSPD);
-                pokemons.add(P);
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Leitor.class.getName()).log(Level.SEVERE,
-                    null, ex);
-            System.out.println("Arquivo invalido");
+    public void lerArq() throws FileNotFoundException, IOException {
+
+        String linha[] = null;
+        int a;
+
+        FileReader reader;
+        reader = new FileReader("tabelas.txt");
+        BufferedReader leitor = new BufferedReader(reader);
+        leitor.readLine();
+
+        a = 0;
+        linha[a] = leitor.readLine();
+        while (linha[a] != null) {
+            //System.out.println(linha[a]);
+            linha[a] = leitor.readLine();
+            a = a + 1;
         }
+
+        leitor.close();
+        /* Tinha esquecido dessa linha */
+
+    }
+    ArrayList<String> linhas;
+
+    public ArrayList<String> getLinhasArquivo(File file) throws FileNotFoundException, IOException {
+
+        try (BufferedReader leitor = new BufferedReader(new FileReader("tabelas.txt"))) {
+            linhas = new ArrayList<>();
+            String linha = "";
+
+            while ((linha = leitor.readLine()) != null) {
+                if (linha.length() > 0) {
+                    linhas.add(linha);
+                    //System.out.println(linha);
+                    
+                    String Pokemons  []= linha.split("\t");
+                    System.out.println(Pokemons);
+                    
+                    
+                }
+            }
+        }
+        return linhas;
     }
 
-    public void lerArquivoParaMapa() {
-        try {
-            Scanner scan = new Scanner(new FileReader("tabelas.xlsx"));
-            scan.nextLine();//para pular a linha do cabecalho
-            while (scan.hasNext() || scan.hasNextDouble()) {
-                int id = scan.nextInt();
-                String especie = scan.next();
-                String type1 = scan.next();
-                String type2 = scan.next();
-                int baseHP = scan.nextInt();
-                int baseATK = scan.nextInt();
-                int baseDEF = scan.nextInt();
-                int baseSPE = scan.nextInt();
-                int baseSPD = scan.nextInt();
-                Pokemon P = new Pokemon();
-                P.setId(id);
-                P.setEspecie(especie);
-                P.setType1(type1);
-                P.setType2(type2);
-                P.setBaseHP(baseHP);
-                P.setBaseATK(baseATK);
-                P.setBaseDEF(baseDEF);
-                P.setBaseSPE(baseSPE);
-                P.setBaseSPD(baseSPD);
-                mapa.put(id, P);
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Leitor.class.getName()).log(Level.SEVERE,
-                    null, ex);
-            System.out.println("Arquivo invalido");
-        }
-    }
+    
+}
+    /*
 
     public List<Pokemon> getPokemons() {
         return pokemons;
@@ -117,3 +90,4 @@ public class Leitor {
         }
     }
 }
+     */
