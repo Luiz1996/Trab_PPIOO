@@ -2,28 +2,16 @@ package br.din.uem.pokemon;
 
 import static br.din.uem.pokemon.Jogo.limparTela;
 import br.din.uem.fronteira.Inicio;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Batalha {
 
     
    Pokemon Pokemon = new Pokemon();
-    Pokemon[] meusPokemons = new Pokemon[6];
-    int controle[] = new int[6];
 
-    public void carregarTabelas() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Escolha seus Pokemons:");
-        for (int i = 0; i < 6; i++) {
-            System.out.print("Escolha seu " + (i + 1) + "º Pokemon:");
-            int escolha = input.nextInt();
-            meusPokemons[i] = Pokemon.escolhaPokemon(escolha - 1);
-            System.out.println("Pokemon escolhido: " + meusPokemons[i].nome);
-            controle[i] = escolha; //Para controlar se o Pokemon já foi escolhido
-        }
-    }
-
-    public void inicializarJogadores() {
+    
+    public void inicializarJogadores() throws IOException {
         Scanner input = new Scanner(System.in);
         int opcao;
         boolean inicializa = true;
@@ -47,11 +35,12 @@ public class Batalha {
                 case 1:
                     inicializa = false;
                     Jogo.limparTela();
-                    Inicio inicio = new Inicio();
-                    inicio.inicializar ();
-                    //será realizado 2x porque são duas pessoas.
-                    carregarTabelas();
-                    carregarTabelas();
+                    System.out.println("Jogador (1), sua vez! Vamos lá? Aperta qualquer tecla \n");
+                    input.nextInt();
+                    Humano.carregarTabelas();
+                    System.out.println("Jogador (2), sua vez! Vamos lá? Aperta qualquer tecla \n");
+                    input.nextInt();
+                    Humano.carregarTabelas();                     //será realizado 2x porque são duas pessoas.
                     break;
 
                 case 2:

@@ -245,10 +245,17 @@ public class Pokemon {
         this.todosPokemons = todosPokemons;
     }
 
-    public Pokemon(String nome, int level, int num) {
-        this.nome = nome;
-        this.level = level;
-        this.num = num;
+    public Pokemon(int id, String especie, String tipo1, String tipo2, int HP, int ATK, int DEF, int SPE, int SPD) {
+        this.id = id;
+        this.especie = especie;
+        this.type1 = tipo1;
+        this.type2 = tipo2;
+        this.baseHP = HP;
+        this.baseATK = ATK;
+        this.baseDEF = DEF;
+        this.baseSPE = SPE;
+        this.baseSPD = SPD;
+        
     }
 
     public Pokemon() {
@@ -264,22 +271,22 @@ public class Pokemon {
 
     public void todosPokemons() {
 
-        todosPokemons[0] = new Pokemon("Bulbasaur", 10, 1);
-        todosPokemons[1] = new Pokemon("Ivysaur", 30, 2);
-        todosPokemons[2] = new Pokemon("Venusaur", 8, 3);
-        todosPokemons[3] = new Pokemon("Charmander", 6, 4);
-        todosPokemons[4] = new Pokemon("Charmeleon", 8, 5);
-        todosPokemons[5] = new Pokemon("Charizard", 40, 6);
-        todosPokemons[6] = new Pokemon("Squirtle", 20, 7);
-        todosPokemons[7] = new Pokemon("Wartortle", 8, 8);
-        todosPokemons[8] = new Pokemon("Blastoise", 8, 9);
-        todosPokemons[9] = new Pokemon("Caterpie", 6, 10);
-        todosPokemons[10] = new Pokemon("Metapod", 8, 11);
-        todosPokemons[11] = new Pokemon("Pikachu", 10, 12);
-        System.out.println("Pokemons disponíveis para escolha: ");
+        todosPokemons[0] = new Pokemon(1, "Bulbasaur", "Grass", "Poison", 45, 49, 49, 65, 45);
+        todosPokemons[1] = new Pokemon(2, "Ivysaur", "Grass", "Poison", 60, 62, 63, 80, 60);
+        todosPokemons[2] = new Pokemon(3, "Venusaur","Grass", "Poison", 80, 82, 83, 100, 80);
+        todosPokemons[3] = new Pokemon(4, "Charmander", "Fire", "", 39, 52, 43, 60, 65);
+        todosPokemons[4] = new Pokemon(5, "Charmeleon", "Fire", "", 58, 64, 58, 80,80);
+        todosPokemons[5] = new Pokemon(6, "Charizard", "Fire", "Flying", 78, 84, 78, 109, 100);
+        todosPokemons[6] = new Pokemon(7, "Squirtle", "Water", "", 44, 48, 65, 50, 53);
+        todosPokemons[7] = new Pokemon(8, "Wartortle","Water", "", 59, 63, 80, 65, 58);
+        todosPokemons[8] = new Pokemon(9, "Blastoise","Water", "", 79, 83, 100, 85, 78);
+        todosPokemons[9] = new Pokemon(10, "Caterpie", "Bug", "", 45, 30, 35, 20, 45);
+        todosPokemons[10] = new Pokemon(11, "Metapod", "Bug", "", 50, 20, 55, 25,30);
+        todosPokemons[11] = new Pokemon(12, "Pikachu", "Eletric", "", 35, 55, 30, 50, 90);
+        System.out.println("Pokemons disponíveis para escolha. \n");
 
         for (int i = 0; i < todosPokemons.length; i++) {
-            System.out.println(todosPokemons[i].num + " - Pokemon: " + todosPokemons[i].nome + " | Level: " + todosPokemons[i].level);
+            System.out.println(todosPokemons[i].id + " - " + todosPokemons[i].especie);
         }
     }
 

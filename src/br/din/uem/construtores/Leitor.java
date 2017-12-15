@@ -52,10 +52,9 @@ public class Leitor {
             while ((linha = leitor.readLine()) != null) {
                 if (linha.length() > 0) {
                     linhas.add(linha);
-                    //System.out.println(linha);
+                    System.out.println(linha);
                     
                     String Pokemons  []= linha.split("\t");
-                    System.out.println(Pokemons);
                     
                     
                 }

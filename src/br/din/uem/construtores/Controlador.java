@@ -13,7 +13,7 @@ import br.din.uem.pokemon.Pokemon;
  */
 public class Controlador {
 
-    private Leitor leitor = new Leitor();
+ /*    private Leitor leitor = new Leitor();
 
     public void recuperarDados() {
         leitor.lerArquivoParaLista();
@@ -33,5 +33,5 @@ public class Controlador {
     public Pokemon buscarPokemonMapa(int id) {
         return leitor.getMapa().get(id);
     }
-
+ */
 }
