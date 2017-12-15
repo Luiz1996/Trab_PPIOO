@@ -1,0 +1,12 @@
+ID	Especie	Tipo 1	Tipo 2	Base HP	Base ATK	Base DEF	Base SPE	Base SPD
+1	Bulbasaur	Grass	Poison	45	49	49	65	45
+2	Ivysaur	Grass	Poison		60	62	63	80	60
+3	Venusaur	Grass	Poison	80	82	83	100	80
+4	Charmander	Fire		39	52	43	60	65
+5	Charmeleon	Fire		58	64	58	80	80
+6	Charizard	Fire	Flying	78	84	78	109	100
+7	Squirtle	Water		44	48	65	50	43
+8	Wartortle	Water		59	63	80	65	58
+9	Blastoise	Water		79	83	100	85	78
+10	Caterpie	Bug		45	30	35	20	45
+11	Metapod		Bug		50	20	55	25	30
