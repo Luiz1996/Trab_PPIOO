@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Humano {
     
-    public  void escolherComando(){
+    public static void escolherComando(){
         Scanner input = new Scanner(System.in);
         int opcao;
         boolean escolha = true;
@@ -37,7 +37,21 @@ public class Humano {
     
     private static Pokemon Pokemon = new Pokemon();
     
-    public static void carregarTabelas() {
+    public static void carregarTabelas1() {
+        Scanner input = new Scanner(System.in);
+        Pokemon[] meusPokemons = new Pokemon[6];
+        
+        Pokemon.todosPokemons ();
+        System.out.println("Escolha seus Pokemons para batalha:");
+        for (int i = 0; i < 6; i++) {
+            System.out.print("Escolha seu " + (i + 1) + "º Pokemon:");
+            int escolha = input.nextInt();
+            meusPokemons[i] = Pokemon.escolhaPokemon(escolha - 1);
+            System.out.println("Pokemon escolhido: " + meusPokemons[i].especie);
+        }
+    }
+
+public static void carregarTabelas2() {
         Scanner input = new Scanner(System.in);
         Pokemon[] meusPokemons = new Pokemon[6];
         

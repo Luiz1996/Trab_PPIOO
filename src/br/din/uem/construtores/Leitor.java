@@ -41,9 +41,9 @@ public class Leitor {
         /* Tinha esquecido dessa linha */
 
     }
-    ArrayList<String> linhas;
+    static ArrayList<String> linhas;
 
-    public ArrayList<String> getLinhasArquivo(File file) throws FileNotFoundException, IOException {
+    public static ArrayList<String> getLinhasArquivo() throws FileNotFoundException, IOException {
 
         try (BufferedReader leitor = new BufferedReader(new FileReader("tabelas.txt"))) {
             linhas = new ArrayList<>();
@@ -54,7 +54,7 @@ public class Leitor {
                     linhas.add(linha);
                     System.out.println(linha);
                     
-                    String Pokemons  []= linha.split("\t");
+                    // String Pokemons  []= linha.split("\t");
                     
                     
                 }

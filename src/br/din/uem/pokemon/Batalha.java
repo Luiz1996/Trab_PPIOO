@@ -36,11 +36,13 @@ public class Batalha {
                     inicializa = false;
                     Jogo.limparTela();
                     System.out.println("Jogador (1), sua vez! Vamos lá? Aperta qualquer tecla \n");
-                    input.nextInt();
-                    Humano.carregarTabelas();
+                    input.nextLine();
+                    Humano.carregarTabelas1();
+                    Humano.escolherComando();
                     System.out.println("Jogador (2), sua vez! Vamos lá? Aperta qualquer tecla \n");
-                    input.nextInt();
-                    Humano.carregarTabelas();                     //será realizado 2x porque são duas pessoas.
+                    input.nextLine(); //será realizado 2x porque são duas pessoas.
+                    Humano.carregarTabelas2();
+                    Humano.escolherComando();
                     break;
 
                 case 2:

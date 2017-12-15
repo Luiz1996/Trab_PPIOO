@@ -32,7 +32,7 @@ public class Inicio {
     public void inicializar() throws IOException {
         do {
             menu();
-            controlador.getLinhasArquivo(new File("tabelas.txt"));
+           // controlador.getLinhasArquivo(new File("tabelas.txt"));
             Pokemon P;
             switch (opcao) {
                 case 1:
