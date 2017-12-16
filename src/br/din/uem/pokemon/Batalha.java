@@ -1,6 +1,5 @@
 package br.din.uem.pokemon;
 
-import static br.din.uem.pokemon.Jogo.limparTela;
 import br.din.uem.fronteira.Inicio;
 import java.io.IOException;
 import java.util.Scanner;
@@ -24,7 +23,7 @@ public class Batalha {
             System.out.println("[2] Humano vs Máquina.");
             System.out.println("[3] Máquina vs Máquina.");
             opcao = input.nextInt();
-            limparTela();
+            
             if (opcao < 1 || opcao > 3) {
                 System.out.println("Opção inválida!");
                 System.out.println("Digite um valor entre 1 e 3.");
@@ -33,25 +32,20 @@ public class Batalha {
 
             switch (opcao) {
                 case 1:
+                    
                     inicializa = false;
-                    Jogo.limparTela();
-                    System.out.println("Jogador (1), sua vez! Vamos lá? Aperta qualquer tecla \n");
-                    input.nextLine();
                     Humano.carregarTabelas1();
-                    Humano.escolherComando();
-                    System.out.println("Jogador (2), sua vez! Vamos lá? Aperta qualquer tecla \n");
-                    input.nextLine(); //será realizado 2x porque são duas pessoas.
                     Humano.carregarTabelas2();
-                    Humano.escolherComando();
                     break;
 
                 case 2:
-                    System.out.println("Humano vs Máquina");
-                    break;
-
+                    System.out.println("Opção não implementada.");
+                    continue inicializa;
+                    
                 case 3:
-                    System.out.println("Máquina vs Máquina");
-                    break;
+                    System.out.println("Opção não implementada.");
+                    continue inicializa;
+                    
             }
         }
     }

@@ -283,7 +283,7 @@ public class Pokemon {
         todosPokemons[9] = new Pokemon(10, "Caterpie", "Bug", "", 45, 30, 35, 20, 45);
         todosPokemons[10] = new Pokemon(11, "Metapod", "Bug", "", 50, 20, 55, 25,30);
         todosPokemons[11] = new Pokemon(12, "Pikachu", "Eletric", "", 35, 55, 30, 50, 90);
-        System.out.println("Pokemons disponíveis para escolha. \n");
+        System.out.print("Pokemons disponíveis para escolha. \n");
 
         for (int i = 0; i < todosPokemons.length; i++) {
             System.out.println(todosPokemons[i].id + " - " + todosPokemons[i].especie);
