@@ -1,4 +1,4 @@
-package br.din.uem.pokemon;
+package br.din.uem.Enum;
 
 public enum Tipo {
     
