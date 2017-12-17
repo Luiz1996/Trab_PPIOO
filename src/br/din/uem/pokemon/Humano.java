@@ -40,13 +40,13 @@ public class Humano {
         Scanner input = new Scanner(System.in);
         Pokemon[] jogador1 = new Pokemon[6];
         
-        Pokemon.todosPokemons ();
+        Especie.todosPokemons ();
         System.out.println("\n"); //Pular 1 linha.
         System.out.println("Jogador 1, sua vez! Escolha seus Pokemóns...");
         for (int i = 0; i < 6; i++) {
             System.out.print("Escolha seu " + (i + 1) + "º Pokemon:");
             int escolha = input.nextInt();
-            jogador1[i] = Pokemon.escolhaPokemon(escolha - 1);
+            jogador1[i] = Especie.escolhaPokemon(escolha - 1);
             System.out.println("Pokemon escolhido: " + jogador1[i].especie);
         }
     }
@@ -55,13 +55,13 @@ public static void carregarTabelas2() {
         Scanner input = new Scanner(System.in);
         Pokemon[] jogador2 = new Pokemon[6];
 
-        Pokemon.todosPokemons ();
+        Especie.todosPokemons ();
         System.out.println("\n"); //Pular 1 linha.
         System.out.println("Jogador 2, sua vez! Escolha seus Pokemóns...");
         for (int i = 0; i < 6; i++) {
             System.out.print("Escolha seu " + (i + 1) + "º Pokemon:");
             int escolha = input.nextInt();
-            jogador2[i] = Pokemon.escolhaPokemon(escolha - 1);
+            jogador2[i] = Especie.escolhaPokemon(escolha - 1);
             System.out.println("Pokemon escolhido: " + jogador2[i].especie);
         }
     }
