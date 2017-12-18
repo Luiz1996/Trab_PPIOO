@@ -22,6 +22,7 @@ public class Batalha {
             System.out.println("[1] Humano vs Humano.");
             System.out.println("[2] Humano vs Máquina.");
             System.out.println("[3] Máquina vs Máquina.");
+            System.out.print("Opção:");
             opcao = input.nextInt();
             
             if (opcao < 1 || opcao > 3) {
@@ -36,6 +37,7 @@ public class Batalha {
                     inicializa = false;
                     Humano.carregarTabelas1();
                     Humano.carregarTabelas2();
+                    System.out.println("------------------------------------ TIMES FORMADOS COM SUCESSO ------------------------------------");
                     break;
 
                 case 2:
