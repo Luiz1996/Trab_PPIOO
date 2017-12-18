@@ -17,9 +17,9 @@ public class Ataque {
         this.classe = classe;
     }
     
-    Ataque[] todosAtaques = new Ataque[4];
+   static Ataque[] todosAtaques = new Ataque[4];
 
-    public void todosPokemons() {
+    public static void todosAtaques() {
 
         todosAtaques[0] = new Ataque(1, "Leech Life", "Bug", 15, 20, 100, "hp");
         todosAtaques[1] = new Ataque(2, "Pin Missile", "Bug", 20, 14, 85, "multihit");
@@ -33,7 +33,7 @@ public class Ataque {
         }
     }
 
-    public Ataque escolhaAtaque(int i) {
+    public static Ataque escolhaAtaque(int i) {
         return todosAtaques[i];
     }
     
