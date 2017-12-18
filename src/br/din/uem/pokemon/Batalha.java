@@ -37,7 +37,7 @@ public class Batalha {
                     inicializa = false;
                     Humano.carregarTabelas1();
                     Humano.carregarTabelas2();
-                    System.out.println("------------------------------------ TIMES FORMADOS COM SUCESSO ------------------------------------");
+                    System.out.println("-------------------------------------------------------------- TIMES FORMADOS COM SUCESSO --------------------------------------------------------------");
                     break;
 
                 case 2:
