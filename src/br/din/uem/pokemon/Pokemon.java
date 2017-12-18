@@ -30,7 +30,7 @@ public class Pokemon {
  
     // Dados secundários
     int id;
-    int baseHP;
+    double baseHP;
     int baseATK;
 
     public int getLevel() {
@@ -209,11 +209,11 @@ public class Pokemon {
         this.id = id;
     }
 
-    public int getBaseHP() {
+    public double getBaseHP() {
         return baseHP;
     }
 
-    public void setBaseHP(int baseHP) {
+    public void setBaseHP(double baseHP) {
         this.baseHP = baseHP;
     }
 

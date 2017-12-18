@@ -13,7 +13,6 @@ public class Batalha {
         int opcao;
         boolean inicializa = true;
 
-        
         while (true) {
             System.out.println("***** BEM VINDO AO POKEMON GAME *****");
             System.out.println("Ecolha o modo de jogo:");
@@ -35,7 +34,6 @@ public class Batalha {
                     carregarTabelas2();
                     System.out.println("-------------------------------------------------------------- TIMES FORMADOS COM SUCESSO --------------------------------------------------------------");
                     Humano.escolherComando(1);
-                    Humano.escolherComando(2);
                     break;
 
                 case 2:
@@ -65,14 +63,14 @@ public class Batalha {
             System.out.print("Escolha seu " + (i + 1) + "º Pokemon:");
             int escolha = input.nextInt();
             especieEscolhida = Especie.escolhaPokemon(escolha - 1);
-            Ataque.todosAtaques();
+             Ataque.todosAtaques();
             for (k = 0; k < 4; k++) {
                 System.out.print("Escolha seu " + (k + 1) + "º Ataque:");
                 int escolhaatk = input.nextInt();
                 ataques1[k] = Ataque.escolhaAtaque(escolhaatk - 1);
             } 
             jogador1[i] = Pokemon.escolhaPokemon(especieEscolhida, ataques1[0], ataques1[1], ataques1[2], ataques1[3]);
-            //System.out.println("Pokemon escolhido: " + jogador1[i].especie);
+            System.out.println("Pokemon escolhido: " + jogador1[i].especie.getNome());
         }
     }
 
@@ -98,7 +96,7 @@ public class Batalha {
                 ataques2[k] = Ataque.escolhaAtaque(escolhaatk - 1);
             }
             jogador2[i] = Pokemon.escolhaPokemon(especieEscolhida, ataques2[0], ataques2[1], ataques2[2], ataques2[3]);
-            //System.out.println("Pokemon escolhido: " + jogador1[i].especie);         
+            System.out.println("Pokemon escolhido: " + jogador1[i].especie.getNome());         
         }
     }
 

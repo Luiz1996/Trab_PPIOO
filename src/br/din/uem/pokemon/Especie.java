@@ -3,8 +3,14 @@ package br.din.uem.pokemon;
 public class Especie {
     
     private String nome, type1, type2;
-    private double baseHp, baseAtk, baseDef, baseSpe, baseSpd, atributoCalculado;
-    private int id;
+    double baseHp;
+    double baseAtk;
+    double baseDef;
+    double baseSpe;
+    double baseSpd;
+    private double atributoCalculado;
+    int id;
+    int level;
 
     public String getType1() {
         return type1;
@@ -96,6 +102,7 @@ public class Especie {
         this.baseDef = DEF;
         this.baseSpe = SPE;
         this.baseSpd = SPD;
+        this.level = level;
         
     }
     
