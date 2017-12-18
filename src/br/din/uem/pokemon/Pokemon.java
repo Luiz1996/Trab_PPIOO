@@ -19,7 +19,7 @@ public class Pokemon {
     private boolean confusion;
     private boolean flinch;
     //private Status statusPrimario;
-    private Especie especie;
+    Especie especie;
     private Ataque ataque1;
     private Ataque ataque2;
     private Ataque ataque3;
@@ -255,7 +255,11 @@ public class Pokemon {
         this.ataque4 = ataque4;
     }
 
-
+    public static Pokemon escolhaPokemon(Especie especie, Ataque ataque1, Ataque ataque2, Ataque ataque3, Ataque ataque4) {
+        Pokemon pokemon = new Pokemon (especie, ataque1, ataque2, ataque3, ataque4);
+        return pokemon;
+    }
+    
     public double valorAtributo() {
 
         return atributoValor;

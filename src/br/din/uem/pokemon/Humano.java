@@ -1,5 +1,6 @@
 package br.din.uem.pokemon;
 
+import static br.din.uem.pokemon.Pokemon.escolhaPokemon;
 import java.util.Scanner;
 
 public class Humano {
@@ -53,9 +54,9 @@ public class Humano {
             for (k = 0; k < 4; k++) {
                 System.out.print("Escolha seu " + (k + 1) + "º Ataque:");
                 int escolhaatk = input.nextInt();
-                ataques1[k] = Ataque.escolhaAtaque(escolhaatk + 1);
+                ataques1[k] = Ataque.escolhaAtaque(escolhaatk - 1);
             }
-           // jogador1[i] = (Especie especieEscolhida, Ataque ataques[1], Ataque ataques[2]);
+            jogador1[i] = Pokemon.escolhaPokemon(especieEscolhida, ataques1[0], ataques1[1], ataques1[2], ataques1[3]);
             //System.out.println("Pokemon escolhido: " + jogador1[i].especie);
         }
     }
@@ -63,15 +64,25 @@ public class Humano {
     public static void carregarTabelas2() {
         Scanner input = new Scanner(System.in);
         Pokemon[] jogador2 = new Pokemon[6];
+        Especie especieEscolhida;
+        Ataque ataques2[] = new Ataque[4];
+        int k;
 
         Especie.todosPokemons();
         System.out.println("\n"); //Pular 1 linha.
-        System.out.println("Jogador 2, sua vez! Escolha seus Pokemóns...");
+        System.out.println("Jogador 1, sua vez! Escolha seus Pokemóns...");
         for (int i = 0; i < 6; i++) {
             System.out.print("Escolha seu " + (i + 1) + "º Pokemon:");
             int escolha = input.nextInt();
-           // jogador2[i] = Especie.escolhaPokemon(escolha - 1);
-           //System.out.println("Pokemon escolhido: " + jogador2[i].especie);
+            especieEscolhida = Especie.escolhaPokemon(escolha - 1);
+            Ataque.todosAtaques();
+            for (k = 0; k < 4; k++) {
+                System.out.print("Escolha seu " + (k + 1) + "º Ataque:");
+                int escolhaatk = input.nextInt();
+                ataques2[k] = Ataque.escolhaAtaque(escolhaatk - 1);
+            }
+            jogador2[i] = Pokemon.escolhaPokemon(especieEscolhida, ataques2[0], ataques2[1], ataques2[2], ataques2[3]);
+            //System.out.println("Pokemon escolhido: " + jogador1[i].especie);
         }
     }
 }

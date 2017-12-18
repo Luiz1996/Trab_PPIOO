@@ -1,8 +1,10 @@
 package br.din.uem.pokemon;
 
 public class Ataque {
+
+    String nome;
     
-    private String nome, tipo, classe;
+    private String tipo, classe;
     private double ppMax, ppAtual, accuracy, critico, dano;
     private int id, power;
     private boolean acerto;

@@ -1,8 +1,10 @@
 package br.din.uem.pokemon;
 
 public class Especie {
+
+    String nome;
     
-    private String nome, type1, type2;
+    private String type1, type2;
     private double baseHp, baseAtk, baseDef, baseSpe, baseSpd, atributoCalculado;
     private int id;
 
