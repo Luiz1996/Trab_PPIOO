@@ -13,8 +13,8 @@ public class Batalha {
         int opcao;
         boolean inicializa = true;
 
-        inicializa:
-        while (inicializa) {
+        
+        while (true) {
             System.out.println("***** BEM VINDO AO POKEMON GAME *****");
             System.out.println("Ecolha o modo de jogo:");
             System.out.println("[1] Humano vs Humano.");
@@ -26,13 +26,11 @@ public class Batalha {
             if (opcao < 1 || opcao > 3) {
                 System.out.println("Opção inválida!");
                 System.out.println("Digite um valor entre 1 e 3.");
-                continue inicializa;
+                continue;
             }
 
             switch (opcao) {
                 case 1:
-
-                    inicializa = false;
                     carregarTabelas1();
                     carregarTabelas2();
                     System.out.println("-------------------------------------------------------------- TIMES FORMADOS COM SUCESSO --------------------------------------------------------------");
@@ -42,11 +40,11 @@ public class Batalha {
 
                 case 2:
                     System.out.println("Opção não implementada.");
-                    continue inicializa;
+                    continue;
 
                 case 3:
                     System.out.println("Opção não implementada.");
-                    continue inicializa;
+                    continue;
 
             }
         }
@@ -128,7 +126,6 @@ public class Batalha {
             jogador[i] = jogador[i + 1];
         }
         jogador[5] = auxtroca[0];
-
     }
 }
 
