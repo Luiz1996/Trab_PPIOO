@@ -1,7 +1,9 @@
 package br.din.uem.pokemon;
 
+import br.din.uem.Enum.Status;
 import java.io.IOException;
 import java.util.Scanner;
+import static javafx.application.Platform.exit;
 import static jdk.nashorn.tools.ShellFunctions.input;
 
 public class Batalha {
@@ -32,6 +34,8 @@ public class Batalha {
                 case 1:
                     carregarTabelas1();
                     carregarTabelas2();
+                    verificaFainted(jogador1);
+                    verificaFainted (jogador2);
                     System.out.println("-------------------------------------------------------------- TIMES FORMADOS COM SUCESSO --------------------------------------------------------------");
                     Humano.escolherComando(1);
                     break;
@@ -62,13 +66,25 @@ public class Batalha {
             Especie.todosPokemons();
             System.out.print("Escolha seu " + (i + 1) + "º Pokemon:");
             int escolha = input.nextInt();
+            if (escolha < 1 || escolha > 12) {
+                System.out.println("Opção inválida!");
+                System.out.println("Digite um valor entre 1 e 12.");
+                i--;
+                continue;
+            }
             especieEscolhida = Especie.escolhaPokemon(escolha - 1);
-             Ataque.todosAtaques();
+            Ataque.todosAtaques();
             for (k = 0; k < 4; k++) {
                 System.out.print("Escolha seu " + (k + 1) + "º Ataque:");
                 int escolhaatk = input.nextInt();
+                if (escolhaatk < 1 || escolhaatk > 4) {
+                    System.out.println("Opção inválida!");
+                    System.out.println("Digite um valor entre 1 e 4.");
+                    k--;
+                    continue;
+                }
                 ataques1[k] = Ataque.escolhaAtaque(escolhaatk - 1);
-            } 
+            }
             jogador1[i] = Pokemon.escolhaPokemon(especieEscolhida, ataques1[0], ataques1[1], ataques1[2], ataques1[3]);
             System.out.println("Pokemon escolhido: " + jogador1[i].especie.getNome());
         }
@@ -88,15 +104,27 @@ public class Batalha {
             Especie.todosPokemons();
             System.out.print("Escolha seu " + (i + 1) + "º Pokemon:");
             int escolha = input.nextInt();
+            if (escolha < 1 || escolha > 12) {
+                System.out.println("Opção inválida!");
+                System.out.println("Digite um valor entre 1 e 12.");
+                i--;
+                continue;
+            }
             especieEscolhida = Especie.escolhaPokemon(escolha - 1);
             Ataque.todosAtaques();
             for (k = 0; k < 4; k++) {
                 System.out.print("Escolha seu " + (k + 1) + "º Ataque:");
                 int escolhaatk = input.nextInt();
+                if (escolhaatk < 1 || escolhaatk > 4) {
+                    System.out.println("Opção inválida!");
+                    System.out.println("Digite um valor entre 1 e 4.");
+                    k--;
+                    continue;
+                }
                 ataques2[k] = Ataque.escolhaAtaque(escolhaatk - 1);
             }
             jogador2[i] = Pokemon.escolhaPokemon(especieEscolhida, ataques2[0], ataques2[1], ataques2[2], ataques2[3]);
-            System.out.println("Pokemon escolhido: " + jogador1[i].especie.getNome());         
+            System.out.println("Pokemon escolhido: " + jogador1[i].especie.getNome());
         }
     }
 
@@ -124,6 +152,20 @@ public class Batalha {
             jogador[i] = jogador[i + 1];
         }
         jogador[5] = auxtroca[0];
+    }
+    
+    public static void verificaFainted (Pokemon [] pokemon){
+        int cont = 0;
+        for (int i = 0; i < 6; i++){
+          if (pokemon[i].especie.baseHp == 0) {
+              pokemon[i].especie.setNome(Status.FAINTED);
+              cont++;
+          }
+        }
+        if (cont == 6) { //Se os 6 pokemons estão "FAINTED" (HP = 0) o jogo se encerra!
+            System.out.println("Todos os Pokemons estão desmaiados! Você perdeu");
+            System.exit(0);
+        }
     }
 }
 

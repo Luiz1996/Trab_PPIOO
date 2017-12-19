@@ -68,14 +68,14 @@ public class Ataque {
         return acerto;
     }
 
-    public double calculoDano(int id) {
+    public static double calculoDano(Pokemon [] pokemon) {
         double dano = 0;
-        dano = ((Especie.escolhaPokemon(id - 1).baseAtk*Especie.escolhaPokemon(id - 1).level)/(Especie.escolhaPokemon(id - 1).baseDef/50) + 2);
+        dano = (((pokemon[0].especie.baseAtk-40)*pokemon[0].especie.getLevel())/(pokemon[0].especie.baseDef/50) + 2);
         return dano;
     }
 
     public int calculoLevel(int id) {
-        return Especie.escolhaPokemon(id - 1).level * 5;
+        return Especie.escolhaPokemon(id - 1).level + 1;
     }
 
     public static Ataque ataqueDesejado(Pokemon[] pokemon, int num) {
@@ -93,10 +93,16 @@ public class Ataque {
         return atk;
     }
     
-    public double consequenciaAtk (Pokemon[] pokemon, Pokemon [] pokemon2){
+    public static double consequenciaAtk (Pokemon[] pokemon, Pokemon [] pokemon2){
         double temp;
-        pokemon2[0].setBaseHP(pokemon2[0].getBaseHP() - calculoDano(pokemon[0].getId()));
-        temp = pokemon2[0].getBaseHP();
+        pokemon2[0].especie.setBaseHp(pokemon2[0].especie.getBaseHp()-calculoDano(pokemon));
+        temp = pokemon2[0].especie.getBaseHp();
+        if (temp <= 0) {
+            pokemon2[0].especie.setBaseHp(0);
+            temp = 0;
+            Batalha.trocaPokemon(pokemon2);
+        }
+        System.out.println("O HP do Pokemon " + pokemon2[0].especie.getNome() + " foi reduzido a: " + temp);
         return temp;
     }
 }

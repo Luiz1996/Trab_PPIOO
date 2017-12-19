@@ -1,5 +1,7 @@
 package br.din.uem.pokemon;
 
+import br.din.uem.Enum.Status;
+
 public class Especie {
     
     private String nome, type1, type2;
@@ -91,6 +93,14 @@ public class Especie {
     public void setId(int id) {
         this.id = id;
     }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
     
     public Especie(int id, String especie, String tipo1, String tipo2, double HP, double ATK, double DEF, double SPE, double SPD, int level) {
         this.id = id;
@@ -138,5 +148,8 @@ public class Especie {
         //desenvolver
         
         return atributoCalculado;
+    }
+
+    void setNome(Status status) {
     }
 }

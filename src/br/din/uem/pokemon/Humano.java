@@ -5,7 +5,7 @@ import static br.din.uem.pokemon.Batalha.jogador2;
 import static br.din.uem.pokemon.Pokemon.escolhaPokemon;
 import java.util.Scanner;
 
-public class Humano {
+public class Humano extends Jogador {
 
     static Pokemon vetor[];
 
@@ -15,7 +15,7 @@ public class Humano {
         boolean escolha = true;
         int opcao;
         while (escolha) {
-            System.out.println("O que deseja fazer?:" + "Jogador nº" + jogador);
+            System.out.println("O que deseja fazer?" + "Jogador nº" + jogador);
             System.out.println("[1] Trocar Pokemon");
             System.out.println("[2] Atacar");
             opcao = input.nextInt();
@@ -59,6 +59,8 @@ public class Humano {
                         System.out.println(" ");
                         int op = input.nextInt();
                         Ataque.ataqueDesejado(jogador1, op - 1);
+                        Ataque.consequenciaAtk(jogador1,jogador2);
+                        Batalha.verificaFainted(jogador2);
                         escolherComando(2);
                     } else if (jogador == 2) {
                         System.out.println("1 - " + jogador2[0].getAtaque1().nome);
@@ -68,6 +70,8 @@ public class Humano {
                         System.out.println(" ");
                         int op = input.nextInt();
                         Ataque.ataqueDesejado(jogador2, op - 1);
+                        Ataque.consequenciaAtk(jogador2,jogador1);
+                        Batalha.verificaFainted(jogador1);
                         escolherComando(1);
                     }
                     break;
